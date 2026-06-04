@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface SimulacionesRepo extends JpaRepository<Simulaciones, Integer> {
-    List<Simulaciones> findByUsuario_Id(Integer idUsuario);
-    List<Simulaciones> findByBanco_Id(Integer idBanco);
+    List<Simulaciones> findByUsuario_IdUsuario(Long idUsuario);
+    List<Simulaciones> findByIdBanco_IdBanco(Integer idBanco);
 }

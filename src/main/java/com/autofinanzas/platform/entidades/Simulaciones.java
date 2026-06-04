@@ -11,12 +11,9 @@ public class Simulaciones {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idsimulaciones;
 
-    ///@ManyToOne
-    ///@JoinColumn(name = "id_usuario", nullable = false)
-    ///private Usuario usuario;
-
-    @Column(name = "id_usuario", nullable = false)
-    private Integer idUsuario;
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "id_banco", nullable = false)
@@ -76,6 +73,29 @@ public class Simulaciones {
     public Simulaciones() {
     }
 
+    public Simulaciones(Integer idsimulaciones, Usuario usuario, Bancos idBanco, String nombreVehiculo, Double precioVehiculoUsd, Double cuotaInicialPorc, Double montoPrestamoUsd, Integer plazoMeses, Double teaAplicadaPorc, Double tceaCalculado, String tipoGracia, Integer mesesGracia, Double van, Double tir, Double cuotaBalon, String estado, LocalDate fechaInicio, Double temAplicada, Boolean desgravamenIncluido, Boolean seguroVehicularIncluido) {
+        this.idsimulaciones = idsimulaciones;
+        this.usuario = usuario;
+        this.idBanco = idBanco;
+        this.nombreVehiculo = nombreVehiculo;
+        this.precioVehiculoUsd = precioVehiculoUsd;
+        this.cuotaInicialPorc = cuotaInicialPorc;
+        this.montoPrestamoUsd = montoPrestamoUsd;
+        this.plazoMeses = plazoMeses;
+        this.teaAplicadaPorc = teaAplicadaPorc;
+        this.tceaCalculado = tceaCalculado;
+        this.tipoGracia = tipoGracia;
+        this.mesesGracia = mesesGracia;
+        this.van = van;
+        this.tir = tir;
+        this.cuotaBalon = cuotaBalon;
+        this.estado = estado;
+        this.fechaInicio = fechaInicio;
+        this.temAplicada = temAplicada;
+        this.desgravamenIncluido = desgravamenIncluido;
+        this.seguroVehicularIncluido = seguroVehicularIncluido;
+    }
+
     public Integer getIdsimulaciones() {
         return idsimulaciones;
     }
@@ -84,140 +104,12 @@ public class Simulaciones {
         this.idsimulaciones = idsimulaciones;
     }
 
-    public Boolean getSeguroVehicularIncluido() {
-        return seguroVehicularIncluido;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setSeguroVehicularIncluido(Boolean seguroVehicularIncluido) {
-        this.seguroVehicularIncluido = seguroVehicularIncluido;
-    }
-
-    public Boolean getDesgravamenIncluido() {
-        return desgravamenIncluido;
-    }
-
-    public void setDesgravamenIncluido(Boolean desgravamenIncluido) {
-        this.desgravamenIncluido = desgravamenIncluido;
-    }
-
-    public Double getTemAplicada() {
-        return temAplicada;
-    }
-
-    public void setTemAplicada(Double temAplicada) {
-        this.temAplicada = temAplicada;
-    }
-
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public Double getCuotaBalon() {
-        return cuotaBalon;
-    }
-
-    public void setCuotaBalon(Double cuotaBalon) {
-        this.cuotaBalon = cuotaBalon;
-    }
-
-    public Double getTir() {
-        return tir;
-    }
-
-    public void setTir(Double tir) {
-        this.tir = tir;
-    }
-
-    public Double getVan() {
-        return van;
-    }
-
-    public void setVan(Double van) {
-        this.van = van;
-    }
-
-    public Integer getMesesGracia() {
-        return mesesGracia;
-    }
-
-    public void setMesesGracia(Integer mesesGracia) {
-        this.mesesGracia = mesesGracia;
-    }
-
-    public String getTipoGracia() {
-        return tipoGracia;
-    }
-
-    public void setTipoGracia(String tipoGracia) {
-        this.tipoGracia = tipoGracia;
-    }
-
-    public Double getTceaCalculado() {
-        return tceaCalculado;
-    }
-
-    public void setTceaCalculado(Double tceaCalculado) {
-        this.tceaCalculado = tceaCalculado;
-    }
-
-    public Double getTeaAplicadaPorc() {
-        return teaAplicadaPorc;
-    }
-
-    public void setTeaAplicadaPorc(Double teaAplicadaPorc) {
-        this.teaAplicadaPorc = teaAplicadaPorc;
-    }
-
-    public Integer getPlazoMeses() {
-        return plazoMeses;
-    }
-
-    public void setPlazoMeses(Integer plazoMeses) {
-        this.plazoMeses = plazoMeses;
-    }
-
-    public Double getMontoPrestamoUsd() {
-        return montoPrestamoUsd;
-    }
-
-    public void setMontoPrestamoUsd(Double montoPrestamoUsd) {
-        this.montoPrestamoUsd = montoPrestamoUsd;
-    }
-
-    public Double getCuotaInicialPorc() {
-        return cuotaInicialPorc;
-    }
-
-    public void setCuotaInicialPorc(Double cuotaInicialPorc) {
-        this.cuotaInicialPorc = cuotaInicialPorc;
-    }
-
-    public Double getPrecioVehiculoUsd() {
-        return precioVehiculoUsd;
-    }
-
-    public void setPrecioVehiculoUsd(Double precioVehiculoUsd) {
-        this.precioVehiculoUsd = precioVehiculoUsd;
-    }
-
-    public String getNombreVehiculo() {
-        return nombreVehiculo;
-    }
-
-    public void setNombreVehiculo(String nombreVehiculo) {
-        this.nombreVehiculo = nombreVehiculo;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public Bancos getIdBanco() {
@@ -228,11 +120,139 @@ public class Simulaciones {
         this.idBanco = idBanco;
     }
 
-    public Integer getIdUsuario() {
-        return idUsuario;
+    public String getNombreVehiculo() {
+        return nombreVehiculo;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setNombreVehiculo(String nombreVehiculo) {
+        this.nombreVehiculo = nombreVehiculo;
+    }
+
+    public Double getPrecioVehiculoUsd() {
+        return precioVehiculoUsd;
+    }
+
+    public void setPrecioVehiculoUsd(Double precioVehiculoUsd) {
+        this.precioVehiculoUsd = precioVehiculoUsd;
+    }
+
+    public Double getCuotaInicialPorc() {
+        return cuotaInicialPorc;
+    }
+
+    public void setCuotaInicialPorc(Double cuotaInicialPorc) {
+        this.cuotaInicialPorc = cuotaInicialPorc;
+    }
+
+    public Double getMontoPrestamoUsd() {
+        return montoPrestamoUsd;
+    }
+
+    public void setMontoPrestamoUsd(Double montoPrestamoUsd) {
+        this.montoPrestamoUsd = montoPrestamoUsd;
+    }
+
+    public Integer getPlazoMeses() {
+        return plazoMeses;
+    }
+
+    public void setPlazoMeses(Integer plazoMeses) {
+        this.plazoMeses = plazoMeses;
+    }
+
+    public Double getTeaAplicadaPorc() {
+        return teaAplicadaPorc;
+    }
+
+    public void setTeaAplicadaPorc(Double teaAplicadaPorc) {
+        this.teaAplicadaPorc = teaAplicadaPorc;
+    }
+
+    public Double getTceaCalculado() {
+        return tceaCalculado;
+    }
+
+    public void setTceaCalculado(Double tceaCalculado) {
+        this.tceaCalculado = tceaCalculado;
+    }
+
+    public String getTipoGracia() {
+        return tipoGracia;
+    }
+
+    public void setTipoGracia(String tipoGracia) {
+        this.tipoGracia = tipoGracia;
+    }
+
+    public Integer getMesesGracia() {
+        return mesesGracia;
+    }
+
+    public void setMesesGracia(Integer mesesGracia) {
+        this.mesesGracia = mesesGracia;
+    }
+
+    public Double getVan() {
+        return van;
+    }
+
+    public void setVan(Double van) {
+        this.van = van;
+    }
+
+    public Double getTir() {
+        return tir;
+    }
+
+    public void setTir(Double tir) {
+        this.tir = tir;
+    }
+
+    public Double getCuotaBalon() {
+        return cuotaBalon;
+    }
+
+    public void setCuotaBalon(Double cuotaBalon) {
+        this.cuotaBalon = cuotaBalon;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public Double getTemAplicada() {
+        return temAplicada;
+    }
+
+    public void setTemAplicada(Double temAplicada) {
+        this.temAplicada = temAplicada;
+    }
+
+    public Boolean getDesgravamenIncluido() {
+        return desgravamenIncluido;
+    }
+
+    public void setDesgravamenIncluido(Boolean desgravamenIncluido) {
+        this.desgravamenIncluido = desgravamenIncluido;
+    }
+
+    public Boolean getSeguroVehicularIncluido() {
+        return seguroVehicularIncluido;
+    }
+
+    public void setSeguroVehicularIncluido(Boolean seguroVehicularIncluido) {
+        this.seguroVehicularIncluido = seguroVehicularIncluido;
     }
 }

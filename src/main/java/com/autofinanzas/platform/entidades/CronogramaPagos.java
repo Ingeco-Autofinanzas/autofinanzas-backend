@@ -29,10 +29,14 @@ public class CronogramaPagos {
     @Column(name="fechaPago",nullable = false)
     private LocalDate fechaPago;
 
+    @ManyToOne
+    @JoinColumn(name="idsimulaciones")
+    Simulaciones simulaciones;
+
     public CronogramaPagos() {
     }
 
-    public CronogramaPagos(int idCronogramaPago, int numeroCuota, Double saldoInicial, Double saldoFinal, Double interes, Double cuotaMensual, Double amortizacion, Double sdegravamen, Double svehicular, LocalDate fechaPago) {
+    public CronogramaPagos(int idCronogramaPago, int numeroCuota, Double saldoInicial, Double saldoFinal, Double interes, Double cuotaMensual, Double amortizacion, Double sdegravamen, Double svehicular, LocalDate fechaPago, Simulaciones simulaciones) {
         this.idCronogramaPago = idCronogramaPago;
         this.numeroCuota = numeroCuota;
         this.saldoInicial = saldoInicial;
@@ -43,6 +47,7 @@ public class CronogramaPagos {
         Sdegravamen = sdegravamen;
         Svehicular = svehicular;
         this.fechaPago = fechaPago;
+        this.simulaciones = simulaciones;
     }
 
     public int getIdCronogramaPago() {
@@ -123,5 +128,13 @@ public class CronogramaPagos {
 
     public void setFechaPago(LocalDate fechaPago) {
         this.fechaPago = fechaPago;
+    }
+
+    public Simulaciones getSimulaciones() {
+        return simulaciones;
+    }
+
+    public void setSimulaciones(Simulaciones simulaciones) {
+        this.simulaciones = simulaciones;
     }
 }

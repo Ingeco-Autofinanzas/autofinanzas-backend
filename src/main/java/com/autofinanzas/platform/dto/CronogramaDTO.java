@@ -1,5 +1,7 @@
 package com.autofinanzas.platform.dto;
 
+import com.autofinanzas.platform.entidades.Simulaciones;
+
 import java.time.LocalDate;
 
 public class CronogramaDTO {
@@ -13,6 +15,15 @@ public class CronogramaDTO {
     private Double Sdegravamen;
     private Double Svehicular;
     private LocalDate fechaPago;
+    private Simulaciones simulaciones;
+
+    public Simulaciones getSimulaciones() {
+        return simulaciones;
+    }
+
+    public void setSimulaciones(Simulaciones simulaciones) {
+        this.simulaciones = simulaciones;
+    }
 
     public int getIdCronogramaPago() {
         return idCronogramaPago;

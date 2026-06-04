@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface CronogramaPagosInterface {
     public List<CronogramaPagos> list();
     public CronogramaPagos insert(CronogramaPagos cp);
-    public Optional<CronogramaPagos> listId(int id);
     public void update(CronogramaPagos cp);
     public void delete(int id);
+    List<CronogramaPagos> findByIdCronogramaPago(int idCP);
 }

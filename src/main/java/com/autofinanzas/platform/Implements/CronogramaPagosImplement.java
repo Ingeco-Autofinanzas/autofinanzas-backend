@@ -24,11 +24,6 @@ public class CronogramaPagosImplement implements CronogramaPagosInterface {
     }
 
     @Override
-    public Optional<CronogramaPagos> listId(int id) {
-        return cr.findById(id);
-    }
-
-    @Override
     public void update(CronogramaPagos cp) {
         cr.save(cp);
     }
@@ -36,5 +31,10 @@ public class CronogramaPagosImplement implements CronogramaPagosInterface {
     @Override
     public void delete(int id) {
         cr.deleteById(id);
+    }
+
+    @Override
+    public List<CronogramaPagos> findByIdCronogramaPago(int idCP) {
+        return cr.findByIdCronogramaPago(idCP);
     }
 }
