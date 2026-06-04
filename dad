@@ -1,0 +1,20 @@
+[1mdiff --git a/src/main/resources/application.properties b/src/main/resources/application.properties[m
+[1mindex f52df78..e29731d 100644[m
+[1m--- a/src/main/resources/application.properties[m
+[1m+++ b/src/main/resources/application.properties[m
+[36m@@ -3,8 +3,11 @@[m [mspring.application.name=backend[m
+ [m
+ spring.jpa.database=postgresql[m
+ spring.jpa.show-sql=true[m
+[31m-spring.jpa.hibernate.ddl-auto=update[m
+[32m+[m[32mspring.jpa.hibernate.ddl-auto=create-drop[m
+ spring.datasource.driver-class-name=org.postgresql.Driver[m
+ spring.datasource.url=jdbc:postgresql://localhost/Autofinanzas[m
+ spring.datasource.username=postgres[m
+[31m-spring.datasource.password=12345678[m
+\ No newline at end of file[m
+[32m+[m[32mspring.datasource.password=1234[m
+[32m+[m
+[32m+[m[32mip.frontend=http://localhost:4200[m
+[32m+[m[32mjwt.secret=6PHHIf8dJmQxw2m7Qb1x5Q8fJjvY8e2e0t6h9g4Qv1M5y7L3c2r8N1s6W4X9A0B=[m
+\ No newline at end of file[m
