@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class SimulacionesDTO {
     private Integer idsimulaciones;
-    private Integer idUsuario;
+    private Long idUsuario;
     private Integer idBanco;
     private String nombreVehiculo;
     private Double precioVehiculoUsd;
@@ -27,19 +27,19 @@ public class SimulacionesDTO {
     public SimulacionesDTO() {
     }
 
-    public Integer getId() {
+    public Integer getIdsimulaciones() {
         return idsimulaciones;
     }
 
-    public void setId(Integer id) {
-        this.idsimulaciones = id;
+    public void setIdsimulaciones(Integer idsimulaciones) {
+        this.idsimulaciones = idsimulaciones;
     }
 
-    public Integer getIdUsuario() {
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
+    public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
 

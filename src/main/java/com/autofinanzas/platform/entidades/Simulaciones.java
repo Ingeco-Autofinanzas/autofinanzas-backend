@@ -17,7 +17,7 @@ public class Simulaciones {
 
     @ManyToOne
     @JoinColumn(name = "id_banco", nullable = false)
-    private Bancos idBanco;
+    private Bancos banco;
 
     @Column(name = "nombre_vehiculo")
     private String nombreVehiculo;
@@ -73,10 +73,10 @@ public class Simulaciones {
     public Simulaciones() {
     }
 
-    public Simulaciones(Integer idsimulaciones, Usuario usuario, Bancos idBanco, String nombreVehiculo, Double precioVehiculoUsd, Double cuotaInicialPorc, Double montoPrestamoUsd, Integer plazoMeses, Double teaAplicadaPorc, Double tceaCalculado, String tipoGracia, Integer mesesGracia, Double van, Double tir, Double cuotaBalon, String estado, LocalDate fechaInicio, Double temAplicada, Boolean desgravamenIncluido, Boolean seguroVehicularIncluido) {
+    public Simulaciones(Integer idsimulaciones, Usuario usuario, Bancos banco, String nombreVehiculo, Double precioVehiculoUsd, Double cuotaInicialPorc, Double montoPrestamoUsd, Integer plazoMeses, Double teaAplicadaPorc, Double tceaCalculado, String tipoGracia, Integer mesesGracia, Double van, Double tir, Double cuotaBalon, String estado, LocalDate fechaInicio, Double temAplicada, Boolean desgravamenIncluido, Boolean seguroVehicularIncluido) {
         this.idsimulaciones = idsimulaciones;
         this.usuario = usuario;
-        this.idBanco = idBanco;
+        this.banco = banco;
         this.nombreVehiculo = nombreVehiculo;
         this.precioVehiculoUsd = precioVehiculoUsd;
         this.cuotaInicialPorc = cuotaInicialPorc;
@@ -112,12 +112,12 @@ public class Simulaciones {
         this.usuario = usuario;
     }
 
-    public Bancos getIdBanco() {
-        return idBanco;
+    public Bancos getBanco() {
+        return banco;
     }
 
-    public void setIdBanco(Bancos idBanco) {
-        this.idBanco = idBanco;
+    public void setBanco(Bancos banco) {
+        this.banco = banco;
     }
 
     public String getNombreVehiculo() {

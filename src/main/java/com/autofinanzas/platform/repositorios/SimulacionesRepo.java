@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface SimulacionesRepo extends JpaRepository<Simulaciones, Integer> {
     List<Simulaciones> findByUsuario_IdUsuario(Long idUsuario);
-    List<Simulaciones> findByIdBanco_IdBanco(Integer idBanco);
+    List<Simulaciones> findByBanco_IdBanco(Integer idBanco);
 }
